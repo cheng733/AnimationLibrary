@@ -24,16 +24,16 @@ const base = {
 if (process.env.NODE_ENV === 'development') {
   tempConfig = {
     ...base,
-    entry: path.join(__dirname, 'example/src/index.tsx'),
+    entry: path.join(__dirname, './src/example/src/index.tsx'),
     output: {
-      path: path.join(__dirname, 'example/dist'),
+      path: path.join(__dirname, './src/example/dist'),
       filename: 'bundle.js',
-      library: 'laputarenderer',
+      library: 'animationLibrary',
       libraryTarget: 'umd',
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, './example/src/index.html'),
+        template: path.join(__dirname, './src/example/src/index.html'),
         filename: 'index.html',
       }),
     ],
@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === 'development') {
         output: {
           filename: 'index.js',
           path: path.resolve(__dirname, 'dist'),
-          library: 'laputarenderer',
+          library: 'animationLibrary',
           libraryTarget: 'umd'
         },
         devtool: 'source-map', 
