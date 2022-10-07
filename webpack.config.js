@@ -13,6 +13,21 @@ const base = {
         test: /\.(ts|tsx)?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        use: [
+          { loader: 'style-loader', },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[hash:base64:6]',
+              },
+            }
+          },
+          { loader: 'less-loader', },
+        ]
       }
     ],
   },
@@ -54,7 +69,8 @@ if (process.env.NODE_ENV === 'development') {
         devtool: 'source-map', 
         externals: {
           'react': 'react',
-          'react-dom': 'react-dom'
+          'react-dom': 'react-dom',
+          'hgc-utils':"hgc-utils"
         },
         plugins: [
           new CleanWebpackPlugin(),

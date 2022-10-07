@@ -1,0 +1,47 @@
+.tabs {
+    display: flex;
+    .tabBtn {
+      width: 80px;
+      height: 24px;
+      text-align: center;
+      margin: 8px;
+      border: 1px solid #000;
+      display: inline-block;
+    }
+    .active {
+      color: aliceblue;
+      background: red;
+      border-color: red;
+    }
+  }
+  .tab {
+    width: 100%;
+    &-header-mask {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 30px;
+      height: 100%;
+      pointer-events: none;
+    }
+    &-header-mask-left {
+      left: 0;
+      background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+    }
+    &-header-mask-right {
+      right: 0;
+      background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+    }
+    &-tab-list {
+      white-space: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none;
+    }
+  }
