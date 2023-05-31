@@ -1,7 +1,8 @@
 import { classnames } from 'hgc-utils';
 import React, { useState } from 'react';
 import HorizontalScroll from './horizontalScroll';
-import  './style.less';
+import './style.less';
+
 const btnArr = [
   'lion',
   'tiger',
